@@ -14,10 +14,10 @@ services:
       - back
       - front
     environment:
-      VIRTUAL_HOST: deployer.domainname.com
+      VIRTUAL_HOST: deployer.localhost
       VIRTUAL_PORT: 443
-      LETSENCRYPT_HOST: deployer.domainname.com
-      LETSENCRYPT_EMAIL: admin@domainname.com
+      LETSENCRYPT_HOST: deployer.localhost
+      LETSENCRYPT_EMAIL: admin@localhost.com
 
   nginx-server:
     image: jwilder/nginx-proxy
@@ -126,10 +126,10 @@ services:
       - user.config
     restart: unless-stopped
     environment:
-      VIRTUAL_HOST: monitor.domainname.com
+      VIRTUAL_HOST: monitor.localhost
       VIRTUAL_PORT: 443
-      LETSENCRYPT_HOST: monitor.domainname.com
-      LETSENCRYPT_EMAIL: admin@domainname.com
+      LETSENCRYPT_HOST: monitor.localhost
+      LETSENCRYPT_EMAIL: admin@localhost.com
     networks:
       - monitor-net
       - front
